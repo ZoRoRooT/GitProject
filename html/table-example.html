@@ -1,16 +1,79 @@
-<html>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            display:inline-block;
+            min-width :150px;
+            background-color: rgb(116, 116, 123);
+            margin: -4px;
+            padding: 10px;
+            font-size:12px;
 
-       <p style="text-align:right;"> 
-                Sudarshan<br/>
-                city Name<br/>
-                telephone<br/>
-                      zip<br/>
-         </p>
-         <table style="background-color:#8b8b90 ;" border="0" width="100%">
-            <tr>
-                <td><h2>Sudarshan</h2> </td>
-            </tr>
-         </table>
-    </body>
+        }
+        ul{
+            background-color: black;
+            padding: 4px;
+            margin: 0px;
+        }
+        
+    
+        li:hover{
+            background-color: black;
+            color: aliceblue;
+        }
+        .mybox{
+            border: 1px solid;
+            width: 400px;
+            display: inline-block;
+            height: 600px;
+            border-radius: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        #img1{
+            background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/1200px-IMG_Academy_Logo.svg.png');
+            width: 100%;
+            height: 50%;
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px 20px 0px 0px;
+            }
+           .mybox:hover{
+            transform: scale(1.05);
+           }
+           body{
+            margin: 0px;
+           }
+    </style>
+</head>
+
+<body>
+<ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>contact</li>
+    <li>super</li>
+</ul>
+      <div class="mybox" >
+        <div id="img1"> </div>
+       <h1>super engineering</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium totam quibusdam corrupti!</p>
+      </div>
+      <div class="mybox" >
+        <div id="img1"> </div>
+        <h1>super engineering</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, labore. Quasi, laboriosam!</p>
+
+      </div>
+      <div class="mybox" >
+        <div id="img1"> </div>
+        <h1>super engineering</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum iure culpa provident!</p>
+      </div>
+</body>
 </html>
