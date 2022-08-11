@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fun();">event handling</button>
+    <button id="b1">event handling add event</button>
+    <button id="b2">event  with element</button>
+    <table border="2">
+        <thead>
+            <th>Name</th>
+            <th>Ocupation</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </thead>
+        <tbody id="e">
+
+        </tbody>
+    </table>
+<script>
+    function fun(){
+        alert("hello")
+    }
+    document.getElementById("b1").addEventListener("click",function(){
+        alert("hello 2")
+    })
+    document.getElementById("b2").onclick=function(){
+        alert("hello 3")
+    }
+    var students=[
+        { name:'sudarshan',
+          ocupation:'software eng',
+          gender:'male',
+          age:21
+        },
+        { name:'pooja',
+          ocupation:'software eng',
+          gender:'female',
+          age:20
+        }
+    ]
+    students.forEach(function(std){
+        var newtr=document.createElement('tr');
+        var nametd=document.createElement('td');
+        nametd.innerHTML=std.name
+        newtr.appendChild(nametd)
+       
+        var occupationtd = document.createElement('td');
+                occupationtd.innerHTML=std.ocupation
+                var gendertd = document.createElement('td');
+                gendertd.innerHTML=std.gender
+                var agetd = document.createElement('td');
+                agetd.innerHTML=std.age
+                newtr.appendChild(nametd)
+                newtr.appendChild(occupationtd)
+                newtr.appendChild(gendertd)
+                newtr.appendChild(agetd)
+        document.getElementById("e").appendChild(newtr);
+    })
+</script>                     
+</body>
+</html>                                                                  
