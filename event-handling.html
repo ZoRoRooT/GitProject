@@ -21,7 +21,14 @@
 
         </tbody>
     </table>
+    <input type="text" id="b13" onkeyup="ar(this);">
+    <button onclick="ar();">submit</button>
+    <h1 id="b23"></h1>
 <script>
+    function ar(a){
+    
+    document.getElementById('b23').innerHTML=a.value;
+    }
     function fun(){
         alert("hello")
     }
@@ -49,16 +56,16 @@
         nametd.innerHTML=std.name
         newtr.appendChild(nametd)
        
-        var occupationtd = document.createElement('td');
-                occupationtd.innerHTML=std.ocupation
-                var gendertd = document.createElement('td');
-                gendertd.innerHTML=std.gender
-                var agetd = document.createElement('td');
-                agetd.innerHTML=std.age
-                newtr.appendChild(nametd)
-                newtr.appendChild(occupationtd)
-                newtr.appendChild(gendertd)
-                newtr.appendChild(agetd)
+         var occupationtd = document.createElement('td');
+         occupationtd.innerHTML=std.ocupation
+         var gendertd = document.createElement('td');
+        gendertd.innerHTML=std.gender
+        var agetd = document.createElement('td');
+        agetd.innerHTML=std.age
+         newtr.appendChild(nametd)
+        newtr.appendChild(occupationtd)
+         newtr.appendChild(gendertd)
+         newtr.appendChild(agetd)
         document.getElementById("e").appendChild(newtr);
     })
 </script>                     
