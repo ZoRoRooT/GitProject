@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // pattern 1 
+        // *
+        // * *
+        // * * *
+        // * * * *
+
+        for(var i=1;i<=4;i++)
+        {
+            for(var j=1;j<=i;j++)
+            {
+                document.write(" * ")
+            }
+            document.write("<br>")
+        }
+
+        //  pattern 2
+
+        //  * * * *
+        //  * * * *
+        //  * * * *
+        //  * * * *
+
+
+                 for(var i=1;i<=4;i++)
+        {
+            for(var j=1;j<=4;j++)
+            {
+                document.write(" * ")
+            }
+            document.write("<br>")
+        }
+
+        // pattern 3
+        // 1
+        // 1 2
+        // 1 2 3
+        // 1 2 3 4
+        // 1 2 3 4 5
+
+
+        for(var i=1;i<=5;i++)
+        {
+            for(var j=1;j<=i;j++)
+            {
+                document.write(j + " ")
+            }
+            document.write("<br>")
+        }
+
+
+        //    pattern 4
+
+        //    * * * *
+        //    * * *
+        //    * *
+        //    * 
+
+
+
+        for(var i=4;i>=0;i--)
+        { for(var j=i;j>=0;j--)
+            {
+            document.write("*")
+        }document.write("<br>")
+        }
+
+
+        //  pattern 5
+        // *
+        // * *
+        // * * *
+        // * * * *
+        // * * *
+        // * *
+        // *
+        var a=10;
+        for(var i=1;i<=2*10;i++)
+        { 
+            // without out using another variable
+              var d=i>10?2*10-i:i
+            // with using another variable  
+            var c= i<=10?i:--a ;
+            // here change variable to se changes
+            for(var j=1;j<=d;j++)
+            {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        //         pattern 6
+        //               *
+        //              * *
+        //             * * *
+        //            * * * *
+        //             * * *
+        //              * *
+        //               * 
+
+        for (var i = 1; i <= 2 * 10; i++) {
+
+            var d = i > 10 ? 2 * 10 - i : i
+
+            for (var nos = 0; nos < 10 - d; nos++) {
+                document.write("&nbsp;")
+            }
+
+            for (var j = 1; j <= d; j++) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
