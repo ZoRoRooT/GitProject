@@ -1,0 +1,26 @@
+<html>
+<head>
+
+</head>
+<script>
+var obj1={
+    firstname:'darshan',
+    lastname:'n'
+}
+var obj2 ={
+    firstname:'sudarshan',
+    lastname:'n'
+}
+function greet(a,b){
+    console.log("hello  ",this.firstname,a,b                                         )
+
+}
+greet.call(obj1,'good moring ',"super fine fan")
+greet.call(obj2,'node js html',"ark etc ")
+
+
+
+
+</script>
+
+</html>

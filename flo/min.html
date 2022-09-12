@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+   
+  
+</head>
+<body>
+    
+    <ul id="d1">
+        <li>hi</li>
+
+    </ul>
+    <script>
+       
+        var students=['sowmya','deepu','aarush','dhanu','dhakshu'];
+        // let list = document.getElementById("d1");
+        
+                 students.forEach(function(a){
+                 var li = document.createElement("li");
+                 li.innerText = a;
+         document.getElementById("d1").appendChild(li);
+                        })
+             
+     </script>
+    
+</body>
+</html>

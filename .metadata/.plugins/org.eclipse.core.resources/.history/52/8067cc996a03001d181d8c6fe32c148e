@@ -1,0 +1,6 @@
+package java;
+
+public class FirstCode {
+	System.out.println("Hello World!")
+
+}
