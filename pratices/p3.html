@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+    <script>
+function addPost(){
+    new newdata={}
+    newdata.title=document.getElementById('title').value;
+    newdata.author=document.getElementById('author').value;
+    fetch("url",{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:json.stringify(newdata)
+    }).then(function(ress){
+
+    }).catch(function(err){
+        
+    })
+}
+
+    </script>
+</body>
+</html>

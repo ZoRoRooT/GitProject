@@ -1,0 +1,67 @@
+<html>
+<head></head>
+<body>
+    <input type="text" name="" id="title" placeholder="enter title"><br><br>
+    <input type="text" name="" id="author" placeholder="enter the author"><br><br>
+    <button onclick="addPost()">Submit</button>
+    <table border="2" align="center">
+        <thead>
+            <td>ID</td>
+            <td>title</td>
+            <td>author</td>
+        </thead>
+        <tbody id="dd">
+
+        </tbody>
+    </table>
+    <script>
+       function addPost(){
+                var newPost = {}
+                newPost.title=document.getElementById('title').value;
+                newPost.author=document.getElementById('author').value;
+                fetch("http://localhost:3000/posts",{
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify(newPost)
+                })
+                .then(function(res){
+                    console.log(res)
+                    fetchData();
+                })
+                .catch(function(err){
+                    console.log(err)
+                })
+            }
+            
+        fetchData()
+        function fetchData(){
+        fetch("http://localhost:3000/posts")
+        .then(function(data){
+            data.json()
+            .then(function(cdata){
+                document.getElementById('dd').innerHTML='';
+            cdata.forEach(function (cdata){
+                
+        var  newtr=document.createElement('tr');
+          var  idtd=document.createElement('td');
+          var  titd=document.createElement('td');
+          var  atd=document.createElement('td');
+            idtd.innerHTML =cdata.id;
+            titd.innerHTML =cdata.title;
+            atd.innerHTML =cdata.author;
+            newtr.appendChild(idtd)
+            newtr.appendChild(titd)
+            newtr.appendChild(atd)
+            document.getElementById('dd').appendChild(newtr)
+            })
+
+                     
+
+        })
+        })
+    }
+    </script>
+</body>
+</html>

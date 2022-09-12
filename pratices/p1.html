@@ -21,13 +21,18 @@
             nametd.innerHTML=countres.name;
             var imgtd =document.createElement('td');
             var img =document.createElement('img')
+            var ctd=document.createElement('td')
+            ctd.innerHTML=countres.capital;
             img.src=countres.flag;
             img.style.width='100px';
             imgtd.appendChild(img);
             newtr.appendChild(nametd);
             newtr.appendChild(imgtd);
+            newtr.appendChild(ctd);
             document.getElementById('dd').appendChild(newtr)
-        })
+        });
+    }).catch(function (err){console.log(err);
+    }).catch(function(err){console.log(err);
     })
     })
 </script>
