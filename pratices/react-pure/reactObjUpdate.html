@@ -1,0 +1,72 @@
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .ins{
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>  
+  <div id="root"></div>
+    <script type="text/babel">
+        var A= function(){
+            //data
+            var [students,setStudents]=React.useState([
+                {firstname:'sudarshan',lastname:'n',age:21},
+                {firstname:'pooja',lastname:'c',age:19}
+            ])
+                function addStud(){
+                    var newa={
+                        firstname:document.getElementById('fn').value,
+                        lastname:document.getElementById('ln').value,
+                        age:document.getElementById('age').value,
+                        }
+                        setStudents([...students,newa])
+                }
+                function delStud(i){
+                
+                    var temp={...students}
+                    console.log(temp);
+                    temp.draw(i,1)
+                    setStudents([...temp])
+
+                }
+        //logic
+            return <div className="ins">
+                <input type="text" name="" placeholder="enter First Name" id="fn" /><br/>
+                <input type="text" name="" placeholder="enter last Name" id="ln"/><br/>
+                <input type="text" name="" placeholder="enter Age" id="age"/><br/>
+                <button onClick={addStud}>Add students</button>
+                <table border="2">
+                    <thead>
+                        <td>FistName</td>
+                        <td>lastName</td>
+                        <td>AGE</td>
+                        <td>Delete</td>
+                    </thead>
+                    <tbody>
+                        {
+                        students.map((s,i)=>{
+                            return(
+                                <tr>
+                                    <td>{s.firstname} </td>
+                                    <td>{s.lastname}</td>
+                                    <td>{s.age}</td>
+                                    <td><button onClick={()=>{{delStud(i)}}}>Delete</button></td>
+                                    </tr>
+                            )
+                         })
+                    }
+                        </tbody>
+                </table>
+                
+                </div>
+        }
+        ReactDOM.render(<A></A>,document.getElementById('root'))
+    </script>
+    </body>
