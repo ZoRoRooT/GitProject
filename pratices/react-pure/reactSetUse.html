@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .ins{
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+  <div id="root"></div>
+    <script type="text/babel">
+
+       var E = function(){
+        //data
+         var [students,setStudents]=React.useState(['sudarshan','dhanush','pooja','divya'])
+        //logic
+        function addStud(){
+            var newd=document.getElementById('name').value;
+            setStudents([...students,newd])
+        }
+        function deletestud(i){
+            var temp=[...students]
+            temp.splice(i,1)
+            setStudents([...temp])
+
+        }
+       return (<div className='ins'>
+            this is called jsx Systems!<br/>
+            <input type="text" id='name'/><br/>
+            <button onClick={addStud}>Add students</button>
+            {
+                students.map((s,i)=>{
+                    return (<li>{s}
+                        <button onClick={()=>{deletestud(i)}}>Delete</button>
+                        </li>)
+                })
+            }
+        
+        </div>)
+      
+       }
+       ReactDOM.render(<E></E>,document.getElementById('root'));
+    </script>
+</body>
+</html>
