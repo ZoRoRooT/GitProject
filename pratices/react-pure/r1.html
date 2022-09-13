@@ -1,0 +1,34 @@
+<html>
+<head>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+        <input type="text" name="" id="add">
+        <button onclick="addlist()">add members</button>
+        <div id="root"></div>
+    <script type="text/babel">
+       
+        var arr=['sudarshan','darshan','pooja','divya','dhanush']
+        
+        function addlist(){
+          var  newa=document.getElementById('add').value;
+            arr.push(newa);
+            genlist();                             
+        }
+        
+        function genlist(){
+        var ab=<ul>
+                    { arr.map((a)=>{
+                        return (<li>{a}</li>)
+                    })
+
+                    }
+            </ul>
+        ReactDOM.render(ab,document.getElementById('root'))
+        }
+        genlist();
+    </script>
+</body>
+</html>
