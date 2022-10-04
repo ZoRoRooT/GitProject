@@ -1,17 +1,39 @@
-import './App.css';
-import Todolist from './Todolist'
-import Counter from './Counter'
-import Hcounter from './Hcounter'
+import { useState } from "react";
+import "./App.css";
+import Alert from "./Components/Alert";
+import Navbar from "./Components/Navbar";
+import Txtform from "./Components/Txtform";
 
 function App() {
+  const [mode,setMode]=useState("light");
+  const [alert,setAlert]=useState(null);
+  const showAlert=(message,type)=>{
+    setAlert({
+      msg:message,
+      type:type
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 1000);
+  }
+  function toggleMode(){  
+    if(mode==="light"){
+      setMode("dark")
+      document.body.style.backgroundColor = '#042743';
+      showAlert("Dark Mode hass been enabled","success")
+    }
+    else{
+      setMode("light")
+      document.body.style.backgroundColor = 'white';
+      showAlert("Light Mode hass been enabled","success")
+    }
+  }
   return (
-    <div className="betterview">
-      <h1>Hello World!</h1>
-      <Todolist></Todolist>
-      <Counter></Counter>
-    <Hcounter></Hcounter>
-    
-    </div>
+    <>
+      <Navbar title="TextUtills" about="About Us" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert}/>
+      <Txtform heading="Enter Text"showAlert={showAlert} mode={mode} />
+    </>
   );
 }
 
